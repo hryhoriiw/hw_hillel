@@ -1,9 +1,10 @@
-const howManyYears = parseInt(prompt('Скільки тобі років?')); //how many
+const howManyYears = parseInt(prompt('Якого ти року народження?')); //how many
 
 if (howManyYears) {
-    alert('Тобі зараз ' + howManyYears + ' років');
+    const currentYear = 2024;
+    alert('У цьому році тобі буде, або вже є ' + (currentYear - howManyYears) + ' років');
 } else {
-    alert('Шкода, що Ви не захотіли ввести свій вік..')
+    alert('Шкода, що Ви не захотіли ввести свій рік народження..')
 }
 
 const whereFrom = prompt('Звідки ти?'); //where
