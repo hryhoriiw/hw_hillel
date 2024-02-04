@@ -7,7 +7,7 @@ let endNumber = 100;
 let exchangeRate = 27;
 
 
-for (i=startNumber; i<=endNumber;i+=10) {
+for (let i=startNumber; i <= endNumber ; i+=10 ) {
     let dlrToHrn = i*exchangeRate;
     console.log(`${i} долларів це ${dlrToHrn} гривень`);
 }

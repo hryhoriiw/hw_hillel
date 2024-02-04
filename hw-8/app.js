@@ -7,7 +7,7 @@ let endNumber = 30;
 let numberAdder = 0.5;
 let result = '';
 
-for(let i=startNumber;i<endNumber;i+=numberAdder) {
+for(let i=startNumber ; i<endNumber ; i+=numberAdder ) {
     result += parseFloat(`${i}`) + ' ';
 }
 

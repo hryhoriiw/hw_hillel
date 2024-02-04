@@ -5,7 +5,7 @@ let userNumber = parseFloat(prompt('введите целое число'));
 if (!isNaN(userNumber) && userNumber > 1) {
     let primeNumber = true;
 
-    for (let i=2;i<userNumber;i++) {
+    for (let i=2 ; i<userNumber ; i++ ) {
         if (userNumber % i === 0) {
             primeNumber = false;
             break;

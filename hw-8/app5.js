@@ -6,7 +6,7 @@ const userNumber = parseFloat(prompt('введите число'));
 
 if (!isNaN(userNumber) && userNumber > 0) {
     let checkNum = true;
-    for (let i=1; i<=userNumber ; i *=3) {
+    for (let i=1 ; i <= userNumber ; i *=3) {
         if (userNumber === i || userNumber === 1) {
             checkNum = false;
             break;

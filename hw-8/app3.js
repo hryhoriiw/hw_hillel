@@ -6,7 +6,7 @@ let startNumber = 1;
 let endNumber = 100;
 
 if (!isNaN(userNumber) && userNumber % 1 ===0) {
-    for (i=startNumber;i<=100;i++) {
+    for (let i = startNumber; i <= 100 ; i++) {
         if (i**2 <= userNumber) {
             console.log(i);
         }
