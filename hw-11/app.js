@@ -13,9 +13,7 @@ for (let i = 0; i < users.length; i++) {
 }
 
 
-document.write(`<p>Користувачі з балансом більше 2к долларів <p/>`)
-
-document.write(`<p>${strBigBalance}<p/>`)
+document.write(`<p>Користувачі з балансом більше 2к долларів <br/> ${strBigBalance} <p/>`)
 
 //знайти суму всіх балансів користувачів
 let allBalance = 0;
