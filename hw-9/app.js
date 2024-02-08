@@ -1,43 +1,43 @@
-// /*Створити масив, довжину та елементи якого задає користувач.
-// Відсортувати масив за зростанням.
-// Видалити елементи з масиву з 2 по 4 (включно!).
-// У міру змін виводити вміст масиву на сторінку.*/
-
-let userArrayLenght = parseInt(prompt('Введіть довжину массиву'));
+let userArrayLength = parseInt(prompt('Введіть довжину масиву'));
 
 let userArray = [];
 
 let checkArray = true;
 
-if (!isNaN(userArrayLenght) && userArrayLenght > 0) {
-    for (let i = 0 ; i < userArrayLenght ; i++) {
-        let element = prompt(`Впишіть елемент масива ${i + 1}`);
-        if (element.length > 0) {
+if (!isNaN(userArrayLength) && userArrayLength > 0) {
+    for (let i = 0; i < userArrayLength; i++) {
+        let element = prompt(`Введіть елемент масиву ${i + 1}`);
+        if (element !== null && element !== '') {
             userArray.push(element);
         } else {
-            alert('помилка');
+            alert('Помилка: введіть коректний елемент');
             checkArray = false;
             break;
         }
-    }    
+    }
 } else {
     checkArray = false;
-    alert('Введіть число більше 0')
+    alert('Введіть число більше 0');
 }
 
 if (checkArray) {
-    document.write(`<p>Ваш массив без змін це ${userArray}<p/>`)
-} 
+    document.write(`<p>Ваш масив без змін: ${userArray}</p>`);
+}
 
-let userArrayIncrease = [...userArray].sort();
+let userArraySorted = [...userArray].sort(function(a, b) {
+    return a - b;
+});
 
-if(checkArray){
-    document.write(`<p>Ваш массив за зростанням це ${userArrayIncrease}<p/>`);
+if (checkArray) {
+    document.write(`<p>Ваш масив відсортований за зростанням: ${userArraySorted}</p>`);
 }
 
 if (userArray.length >= 5) {
-    userArrayIncrease.splice(2, 4);
-    document.write(`<p>Ваш массив без 2-4 єлементів це ${userArrayIncrease}<p/>`); 
+    userArray.splice(1, 3);
+    document.write(`<p>Ваш масив без елементів з 2 по 4: ${userArray}</p>`);
 } else {
-    alert('Ваш массив має менше 5 єлементів');
+    alert('Ваш масив має менше 5 елементів');
 }
+
+
+
