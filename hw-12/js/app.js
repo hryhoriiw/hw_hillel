@@ -51,7 +51,3 @@ enterProductNumber();
 enterAmountProduct();
 calculatePrice();
 ifDiscount();
-
-
-
-//productNumber productAmount productToBuy price discount discountStartsFrom
