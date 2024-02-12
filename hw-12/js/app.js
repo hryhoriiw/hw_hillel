@@ -1,67 +1,57 @@
-/*
-+0) prepare data
-+1) show all products with prices
-+2) show prompt with request to enter product number (validation)
-+3) show prompt with request to enter product amount (validation)
-+4) calculate price
-+5) check if discount available
-+6) if so - calculate discount
-+7) then show final price
+//Имеется массив объектов с товарами и их ценами. Вывести в консоль список с данными по всем товарам (каждый товар на отдельной строке).
+// От пользователя получить номер товара (реализовать проверку на правильность ввода номера)
+//и количество (также, реализовать валидацию), вывести на страницу итоговую стоимость покупки. 
+//Если стоимость превышает 10.000 рассчитать скидку в 20% и сообщить об этом пользователю.
 
-*/
-
-
-// 1
+let productNumber;
+let productToBuy;
 
 function showProducts() {
   for (let i = 0; i < products.length; i++) {
-    console.log(`#${i + 1} ${products[i].name} - $${products[i].price} - ${products[i].availability}`);
+    console.log(`#${i + 1} ${products[i].name} ${products[i].price} - ${products[i].availability}`);
   }
 }
 
-
-showProducts();
-
-// 2
-let productNumber;
 function enterProductNumber() {
   do {
-    productNumber = parseInt(prompt('Enter product number'));
-  } while(productNumber < 1 || productNumber > products.length || isNaN(productNumber));
+    productNumber = parseInt(prompt(`Введите номер желаемого товара`));
+  } while (productNumber <= 0 || isNaN(productNumber) || productNumber > products.length);
+  
+  productToBuy = products[productNumber - 1];
 }
-
-enterProductNumber();
-
-
-// 3
-const productToBuy = products[productNumber - 1];
-
 
 let productAmount;
+
 function enterAmountProduct() {
   do {
-    productAmount = parseInt(prompt('Enter amount of products you wanna buy'));
-  } while(productAmount < 1 || productAmount > productToBuy.availability || isNaN(productAmount));
+    productAmount = parseInt(prompt(`Введите количество желаемого товара`));
+  } while (productAmount <= 0 || isNaN(productAmount) || productAmount > productToBuy.availability);
 }
 
-enterAmountProduct();
+let price;
 
-// 4
+function calculatePrice() {
+  price = productAmount * productToBuy.price;
+}
 
-const price = productToBuy.price * productAmount;
-const discount = 0.2;
-const discountStartsFrom = 10000;
+let discount = 0.2;
+let discountStartsFrom = 10000;
 
-// 5
-function discountProducts() {
+function ifDiscount() {
+  let calculatePriceWithDiscount = price - price * discount;
   if (price >= discountStartsFrom) {
-    // 6
-    const finalPrice = price - price * discount;
-    // 7
-    console.log(`Congrats! You get discount. Your final price is ${finalPrice}`)
+    console.log(`Ура, вы заслужили скидку, теперь ваша общая стоимость товаров ${calculatePriceWithDiscount} $`);
   } else {
-    console.log(`The final price is ${price} $`);
+    console.log(`К сожалению, вы не получили скидку, ваша общая стоимость товаров = ${price} $`);
   }
 }
 
-discountProducts();
+showProducts();
+enterProductNumber();
+enterAmountProduct();
+calculatePrice();
+ifDiscount();
+
+
+
+//productNumber productAmount productToBuy price discount discountStartsFrom
