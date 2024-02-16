@@ -1,34 +1,27 @@
-/*Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.*/ 
+// Дано масив з елементами різних типів. 
+// Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.
 
-function filterArrayAndGetAverage (inputArray) {
-  
+function filterArrayAndGetAverage(inputArray) {
+
   let numberInArray = [];
-  
-  for (let i = 0; i < inputArray.length; i++) {
-    
-    if (typeof inputArray[i] === 'number') {
-      numberInArray.push(inputArray[i]);
-    }
-
-  }
-  console.log(numberInArray);
-
+  let count = 0;
   let sum = 0;
 
-  for (let i = 0; i < numberInArray.length; i++) {
-    sum += numberInArray[i];
+  for (let i = 0; i < inputArray.length; i++) {
+    if (typeof inputArray[i] === 'number') {
+      numberInArray.push(inputArray[i])
+      sum += inputArray[i];
+      count++;
+    }
   }
 
-  const average = numberInArray.length > 0 ? sum / numberInArray.length : 0;
-  console.log(average)
+  let average = count > 0 ?  sum / count : 0;
+  return average;
 }
 
-
 const array = [1, 5, true , [4,5,6] , 'hello' , { key: 10} , undefined , 102];
-filterArrayAndGetAverage(array);
-
-
-
+const result = filterArrayAndGetAverage(array);
+console.log(result);
 
 
 
