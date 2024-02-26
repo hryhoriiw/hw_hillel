@@ -10,6 +10,9 @@ function random(amount, charactersSet) {
 
 const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
+const length = 16;
 const randomKey = random(length,characters);
 
-//console.log(random(16, characters));
+
+
+console.log(random(length, characters));
