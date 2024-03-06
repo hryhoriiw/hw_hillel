@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hw22</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/data.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/app.js"></script>
+
+</head>
+<body>
+
+    <form id="registrationForm">
+
+        <label for="firstName">Name :</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+
+        <label for="lastName">Last Name :</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="dob">Date of Birthday</label>
+        <input type="text" id="dob" name="dob" required><br><br>
+
+        <label>Gender :</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="city">City:</label>
+        <select id="city" name=city">
+            <option value="kyiv">Kyiv</option>
+            <option value="lviv">Lviv</option>
+            <option value="Odessa">Odessa</option>
+        </select><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="50"></textarea><br><br>
+
+        <label>Languages you speak:</label>
+        <input type="checkbox" id="english" name="language" value="english">
+        <label for="english" >English</label>
+        <input type="checkbox" id="ukrainian" name="language" value="ukrainian">
+        <label for="ukrainian" >Ukrainian</label>
+        <input type="checkbox" id="french" name="language" value="french">
+        <label for="french" >French</label><br><br>
+
+        <button type="button" onclick="saveData()">Save Data</button>
+    </form>
+
+    <table id="userDataTable">
+        <thead>
+        <tr>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Дата народження</th>
+            <th>Стать</th>
+            <th>Місто</th>
+            <th>Адреса</th>
+            <th>Мови</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</body>
+</html>
